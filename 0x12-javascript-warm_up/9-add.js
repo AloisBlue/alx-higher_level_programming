@@ -2,13 +2,12 @@
 const process = require('node:process');
 
 let { argv } = process;
-let a = argv[2];
-let b = argv[3];
+let a = Number(argv[2]);
+let b = Number(argv[3]);
 
 function add(a, b) {
-  let sum = Number(a) + Number(b);
-  console.log(sum);
+  let sum = a + b;
   return sum;
 };
 
-add(a, b);
+console.log(add(a, b));
