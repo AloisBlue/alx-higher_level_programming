@@ -1,1 +1,1 @@
-This is ALS high level programming course
+This is ALX high level programming course
