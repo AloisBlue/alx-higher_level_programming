@@ -7,9 +7,9 @@ class Rectangle {
     }
   }
 
-  print () {
+  print (c) {
     for (let i = 0; i < this.height; i++) {
-      console.log(Array(this.width).fill('X').join(''));
+      console.log(Array(this.width).fill(c).join(''));
     }
   }
 
@@ -27,25 +27,22 @@ class Rectangle {
   }
 }
 
-class Square1 extends Rectangle {
-  constructor (size) {
-    super(size, size);
-  }
-}
-
-class Square extends Square1 {
+class Square extends Rectangle {
   constructor (square) {
-    super(square);
-    this.square = square;
+    super(square, square);
   }
 
   charPrint (c) {
     if (c) {
-      for (let i = 0; i < this.height; i++) {
-        console.log(Array(this.width).fill(c).join(''));
-      }
+      this.print.call({
+        width: this.width,
+        height: this.height
+      }, c);
     } else {
-      this.print();
+      this.print.call({
+        width: this.width,
+        height: this.height
+      }, 'X');
     }
   }
 }
