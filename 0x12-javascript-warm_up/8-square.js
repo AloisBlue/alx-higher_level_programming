@@ -1,14 +1,12 @@
 #!/usr/bin/node
-const process = require('node:process');
-
-const { argv } = process;
-const n = Number(argv[2]);
-const positive = Math.sign(n);
-
-if (positive === 1) {
-  for (let i = 0; i < n; i++) {
-    console.log('X'.repeat(n));
-  }
-} else if (positive === -1) {
+if (isNaN(Number(process.argv[2]))) {
   console.log('Missing size');
+} else {
+  let i = 0;
+  let number = Math.floor(Number(process.argv[2]));
+
+  while (i < number) {
+    console.log(Array(number).fill('X').join(''));
+    i++;
+  }
 }
