@@ -7,9 +7,9 @@ class Rectangle {
     }
   }
 
-  print (c) {
+  print () {
     for (let i = 0; i < this.height; i++) {
-      console.log(Array(this.width).fill(c).join(''));
+      console.log(Array(this.width).fill('X').join(''));
     }
   }
 
@@ -41,13 +41,11 @@ class Square extends Square1 {
 
   charPrint (c) {
     if (c) {
-      this.print.call({
-        width: this.width, height: this.height
-      }, 'C');
+      for (let i = 0; i < this.height; i++) {
+        console.log(Array(this.width).fill(c).join(''));
+      }
     } else {
-      this.print.call({
-        width: this.width, height: this.height
-      }, 'X');
+      this.print();
     }
   }
 }
