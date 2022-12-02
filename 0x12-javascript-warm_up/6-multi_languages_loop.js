@@ -1,8 +1,8 @@
 #!/usr/bin/node
 const stringArr = [
-  "C is fun",
-  "Python is cool",
-  "JavaScript is amazing"
+  'C is fun',
+  'Python is cool',
+  'JavaScript is amazing'
 ];
 
 let i = 0;
