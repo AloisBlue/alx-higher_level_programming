@@ -1,5 +1,4 @@
 #!/usr/bin/node
-const process = require('node:process');
 const values = [];
 const pathArg = process.argv;
 
