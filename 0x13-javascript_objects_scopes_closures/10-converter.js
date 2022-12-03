@@ -4,26 +4,12 @@ exports.converter = function (base) {
     const finalList = [];
 
     while (number > base) {
-      const rem = toHex(number % base);
-      finalList.push(toHex(rem));
+      finalList.push((number % base).toString(base));
       number = Math.floor(number / base);
     }
 
-    finalList.unshift(toHex(number));
+    finalList.unshift(number.toString(base));
 
     return finalList.join('');
   };
 };
-
-function toHex (rem) {
-  const hexValues = ['a', 'b', 'c', 'd', 'e', 'f'];
-  let i = 0;
-  let char = rem;
-
-  while (i <= (rem - 10)) {
-    char = hexValues[i];
-    i++;
-  }
-
-  return char;
-}
